@@ -1,550 +1,1098 @@
-<p align="center"># 🛒 Mini Flipkart - Microservices E-Commerce Application<p align="center">
-
-  <img src="https://img.shields.io/badge/🛒-Mini%20Flipkart-ff6f00?style=for-the-badge&labelColor=000000" alt="Mini Flipkart"/>
-
-</p>  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,45:326CE5,100:16A34A&height=200&section=header&text=mini-flipkart%20on%20EKS&fontSize=42&fontColor=ffffff&animation=fadeIn" alt="EKS Banner" />
+<div align="center"><p align="center"># 🛒 Mini Flipkart - Microservices E-Commerce Application<p align="center">
 
 
 
-<h1 align="center">🛒 Mini Flipkart</h1>A cloud-native e-commerce application built with **11 microservices**, demonstrating modern DevOps practices with Docker, Amazon ECR, and Kubernetes (EKS) deployment.</p>
+# 🛒 Mini Flipkart  <img src="https://img.shields.io/badge/🛒-Mini%20Flipkart-ff6f00?style=for-the-badge&labelColor=000000" alt="Mini Flipkart"/>
+
+
+
+### 11 Microservices E-Commerce Application on Amazon EKS</p>  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,45:326CE5,100:16A34A&height=200&section=header&text=mini-flipkart%20on%20EKS&fontSize=42&fontColor=ffffff&animation=fadeIn" alt="EKS Banner" />
+
+
+
+[![Microservices](https://img.shields.io/badge/Microservices-11-00C853?style=for-the-badge&logo=docker&logoColor=white)](.)
+
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-EKS-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](.)
+
+[![AWS](https://img.shields.io/badge/AWS-ECR%20%7C%20EKS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](.)<h1 align="center">🛒 Mini Flipkart</h1>A cloud-native e-commerce application built with **11 microservices**, demonstrating modern DevOps practices with Docker, Amazon ECR, and Kubernetes (EKS) deployment.</p>
+
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](.)
 
 <h3 align="center">11 Microservices E-Commerce Application Deployment on Amazon EKS</h3>
 
+---
 
+
+
+</div>
 
 <p align="center">
+
+<br>
 
   <img src="https://img.shields.io/badge/Microservices-11-brightgreen?style=flat-square" alt="Microservices"/>![Architecture](https://img.shields.io/badge/Architecture-Microservices-blue)<p align="center">
 
+<!-- ==================== AGENDA SECTION ==================== -->
+
   <img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
 
-  <img src="https://img.shields.io/badge/Kubernetes-EKS-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes"/>![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)  <img src="https://img.shields.io/badge/App-mini--flipkart-2563EB?style=for-the-badge" alt="App" />
+<table>
+
+<tr>  <img src="https://img.shields.io/badge/Kubernetes-EKS-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes"/>![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)  <img src="https://img.shields.io/badge/App-mini--flipkart-2563EB?style=for-the-badge" alt="App" />
+
+<td>
 
   <img src="https://img.shields.io/badge/AWS-ECR%20|%20EKS-FF9900?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS"/>
 
+## 📋 Agenda
+
   <img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square" alt="License"/>![Kubernetes](https://img.shields.io/badge/Kubernetes-EKS-326CE5?logo=kubernetes)  <img src="https://img.shields.io/badge/Platform-Amazon%20EKS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="EKS" />
 
-</p>
+| # | Step | Description |
 
-![AWS](https://img.shields.io/badge/AWS-ECR%20%7C%20EKS-FF9900?logo=amazon-aws)  <img src="https://img.shields.io/badge/Orchestration-Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="K8s" />
+|:---:|:---|:---|</p>
 
-<p align="center">
+| **1** | 🖥️ **EC2 Setup** | Create EC2 instance and install DevOps tools using `ekssetup.sh` |
+
+| **2** | 🐳 **Docker Compose (Source)** | Build & run app from source code using `docker-compose.yaml` |![AWS](https://img.shields.io/badge/AWS-ECR%20%7C%20EKS-FF9900?logo=amazon-aws)  <img src="https://img.shields.io/badge/Orchestration-Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="K8s" />
+
+| **3** | 📤 **Build & Push to ECR** | Build Docker images and push to Amazon ECR |
+
+| **4** | 🚀 **Docker Compose (ECR)** | Test deployment using ECR images with `docker-compose-ecr.yaml` |<p align="center">
+
+| **5** | ☸️ **Kubernetes (EKS)** | Production deployment on Amazon EKS cluster |
 
   <a href="#-architecture">Architecture</a> •  <img src="https://img.shields.io/badge/Path-EC2%20%E2%86%92%20Docker%20%E2%86%92%20K8s-16A34A?style=for-the-badge" alt="Path" />
 
-  <a href="#-agenda">Agenda</a> •
+</td>
+
+</tr>  <a href="#-agenda">Agenda</a> •
+
+</table>
 
   <a href="#-microservices">Microservices</a> •---</p>
 
+<br>
+
   <a href="#-deployment-steps">Deployment</a> •
+
+<!-- ==================== ARCHITECTURE SECTION ==================== -->
 
   <a href="#-quick-commands">Quick Commands</a>
 
-</p>
+<table>
+
+<tr></p>
+
+<td>
 
 ## 📋 Table of Contents# Project 11: Application Deployment End-to-End on Kubernetes (EKS)
 
+## 🏗️ Architecture Diagram
+
 ---
 
+<div align="center">
 
 
-## 📋 Agenda
-
-1. [Architecture Overview](#-architecture-overview)**Application name:** `mini-flipkart`
 
 ```
 
-┌─────────────────────────────────────────────────────────────────────────────────┐2. [Microservices](#-microservices)
+                                    ┌─────────────────────────────────────────────────────────────┐## 📋 Agenda
 
-│                        MINI FLIPKART DEPLOYMENT JOURNEY                         │
+                                    │                        🌐 INTERNET                          │
 
-├─────────────────────────────────────────────────────────────────────────────────┤3. [Prerequisites](#-prerequisites)> Learning style: **Understand the story first → see architecture → create EKS in AWS Console → deploy YAML manifests in clear order.**
+                                    └─────────────────────────────┬───────────────────────────────┘1. [Architecture Overview](#-architecture-overview)**Application name:** `mini-flipkart`
 
-│                                                                                 │
+                                                                  │
 
-│   📦 STEP 1: Create EC2 & Install Software (ekssetup.sh)                       │4. [Deployment Options](#-deployment-options)
+                                                                  ▼```
 
-│       └──▶ Docker, kubectl, AWS CLI, Helm, eksctl                              │
+                                    ┌─────────────────────────────────────────────────────────────┐
 
-│                                                                                 │   - [Option 1: Docker Compose (Local/Development)](#option-1-docker-compose-localdevelopment)Demo login:
+                                    │                   ⚖️  AWS LOAD BALANCER                     │┌─────────────────────────────────────────────────────────────────────────────────┐2. [Microservices](#-microservices)
 
-│   🐳 STEP 2: Docker Compose - Build from Source                                │
+                                    │                    (Ingress Controller)                     │
 
-│       └──▶ Path: src/* → docker-compose.yaml                                   │   - [Option 2: Docker Compose with ECR Images](#option-2-docker-compose-with-ecr-images)
+                                    │                    mini-flipkart.com                        ││                        MINI FLIPKART DEPLOYMENT JOURNEY                         │
 
-│                                                                                 │
+                                    └─────────────────────────────┬───────────────────────────────┘
 
-│   📤 STEP 3: Build & Push Images to ECR                                        │   - [Option 3: Kubernetes (EKS Production)](#option-3-kubernetes-eks-production)```text
+                                                                  │├─────────────────────────────────────────────────────────────────────────────────┤3. [Prerequisites](#-prerequisites)> Learning style: **Understand the story first → see architecture → create EKS in AWS Console → deploy YAML manifests in clear order.**
 
-│       └──▶ Create ECR repos → Build → Tag → Push                               │
+                                                                  ▼
 
-│                                                                                 │5. [AWS Infrastructure Setup](#-aws-infrastructure-setup)Email: demo@devopsmate.com
+                                    ┌─────────────────────────────────────────────────────────────┐│                                                                                 │
 
-│   🚀 STEP 4: Docker Compose - ECR Images                                       │
+                                    │                      🖥️  FRONTEND                           │
 
-│       └──▶ docker-compose-ecr.yaml (test deployment)                           │6. [Quick Start Commands](#-quick-start-commands)Password: password
+                                    │                       Go | Port 8080                        ││   📦 STEP 1: Create EC2 & Install Software (ekssetup.sh)                       │4. [Deployment Options](#-deployment-options)
 
-│                                                                                 │
+                                    │                    Mini Flipkart Web UI                     │
 
-│   ☸️  STEP 5: Kubernetes (EKS) Production Deployment                           │7. [Accessing the Application](#-accessing-the-application)```
+                                    └─────────────────────────────┬───────────────────────────────┘│       └──▶ Docker, kubectl, AWS CLI, Helm, eksctl                              │
 
-│       └──▶ kubernetes-manifests/ → kubectl apply                               │
+                                                                  │
 
-│                                                                                 │
+                ┌────────────────────┬────────────────────┬───────┴───────┬────────────────────┬────────────────────┐│                                                                                 │   - [Option 1: Docker Compose (Local/Development)](#option-1-docker-compose-localdevelopment)Demo login:
 
-└─────────────────────────────────────────────────────────────────────────────────┘
+                │                    │                    │               │                    │                    │
+
+                ▼                    ▼                    ▼               ▼                    ▼                    ▼│   🐳 STEP 2: Docker Compose - Build from Source                                │
+
+┌───────────────────────┐ ┌───────────────────────┐ ┌───────────────────────┐ ┌───────────────────────┐ ┌───────────────────────┐
+
+│     📢 AD SERVICE     │ │  💡 RECOMMENDATION    │ │     🛒 CART SERVICE   │ │  📦 PRODUCT CATALOG   │ │   💵 CURRENCY SERVICE ││       └──▶ Path: src/* → docker-compose.yaml                                   │   - [Option 2: Docker Compose with ECR Images](#option-2-docker-compose-with-ecr-images)
+
+│     Java | 9555       │ │   Python | 8080       │ │     C# | 7070         │ │     Go | 3550         │ │    Node.js | 7000     │
+
+└───────────────────────┘ └───────────────────────┘ └───────────┬───────────┘ └───────────────────────┘ └───────────────────────┘│                                                                                 │
+
+                                                                │
+
+                                                                ▼│   📤 STEP 3: Build & Push Images to ECR                                        │   - [Option 3: Kubernetes (EKS Production)](#option-3-kubernetes-eks-production)```text
+
+                                                  ┌───────────────────────┐
+
+                                                  │     🔴 REDIS CACHE    ││       └──▶ Create ECR repos → Build → Tag → Push                               │
+
+                                                  │        Port 6379      │
+
+                                                  └───────────────────────┘│                                                                                 │5. [AWS Infrastructure Setup](#-aws-infrastructure-setup)Email: demo@devopsmate.com
+
+
+
+                                    ┌─────────────────────────────────────────────────────────────┐│   🚀 STEP 4: Docker Compose - ECR Images                                       │
+
+                                    │                    ✅ CHECKOUT SERVICE                      │
+
+                                    │                       Go | Port 5050                        ││       └──▶ docker-compose-ecr.yaml (test deployment)                           │6. [Quick Start Commands](#-quick-start-commands)Password: password
+
+                                    │                  (Order Orchestration)                      │
+
+                                    └─────────────────────────────┬───────────────────────────────┘│                                                                                 │
+
+                                                                  │
+
+                          ┌───────────────────────────────────────┼───────────────────────────────────────┐│   ☸️  STEP 5: Kubernetes (EKS) Production Deployment                           │7. [Accessing the Application](#-accessing-the-application)```
+
+                          │                                       │                                       │
+
+                          ▼                                       ▼                                       ▼│       └──▶ kubernetes-manifests/ → kubectl apply                               │
+
+            ┌───────────────────────┐               ┌───────────────────────┐               ┌───────────────────────┐
+
+            │    📧 EMAIL SERVICE   │               │   💰 PAYMENT SERVICE  │               │  🚚 SHIPPING SERVICE  ││                                                                                 │
+
+            │    Python | 8080      │               │    Node.js | 50051    │               │     Go | 50051        │
+
+            └───────────────────────┘               └───────────────────────┘               └───────────────────────┘└─────────────────────────────────────────────────────────────────────────────────┘
+
+```
 
 ```------
 
+</div>
 
 
----
+
+</td>
+
+</tr>---
+
+</table>
 
 
+
+<br>
 
 ## 🏗 Architecture## 🏗 Architecture Overview## Agenda
 
+<!-- ==================== MICROSERVICES TABLE ==================== -->
 
 
-```
+
+<table>
+
+<tr>```
+
+<td>
 
                                         🌐 INTERNET
 
+## 🔧 Microservices Details
+
                                              │```| Step | What you do |
 
-                                             ▼
+| # | Service | Language | Port | Description |
 
-                            ┌────────────────────────────────┐                                    ┌─────────────────┐|---|---|
+|:---:|:---|:---:|:---:|:---|                                             ▼
 
-                            │     ⚖️  LOAD BALANCER          │
+| 1 | **Frontend** | ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white) | `8080` | Web UI - Mini Flipkart Shop |
 
-                            │      (Ingress/ALB)             │                                    │   Load Balancer │| 1 | Understand why we move **EC2 → Docker → Kubernetes** |
+| 2 | **Cart Service** | ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white) | `7070` | Shopping cart management with Redis |                            ┌────────────────────────────────┐                                    ┌─────────────────┐|---|---|
 
-                            │    mini-flipkart.com           │
+| 3 | **Product Catalog** | ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white) | `3550` | Product listing and details |
 
-                            └────────────────┬───────────────┘                                    │    (Ingress)    │| 2 | Learn Kubernetes architecture (control plane + worker nodes) |
+| 4 | **Currency Service** | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) | `7000` | Currency conversion rates |                            │     ⚖️  LOAD BALANCER          │
 
-                                             │
+| 5 | **Payment Service** | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) | `50051` | Payment processing (mock) |
 
-                                             ▼                                    └────────┬────────┘| 3 | See what happens internally when DevOps applies a Deployment |
+| 6 | **Shipping Service** | ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white) | `50051` | Shipping cost calculation |                            │      (Ingress/ALB)             │                                    │   Load Balancer │| 1 | Understand why we move **EC2 → Docker → Kubernetes** |
 
-                            ┌────────────────────────────────┐
+| 7 | **Email Service** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | `8080` | Order confirmation emails |
 
-                            │         🖥️  FRONTEND           │                                             │| 4 | Learn Namespace, ConfigMap, Secret, Deployment, StatefulSet, Service, Ingress |
+| 8 | **Checkout Service** | ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white) | `5050` | Checkout orchestration |                            │    mini-flipkart.com           │
 
-                            │          (Go :8080)            │
+| 9 | **Recommendation** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | `8080` | Product recommendations |
 
-                            │      Mini Flipkart UI          │                                    ┌────────▼────────┐| 5 | Create **EKS cluster** in AWS Console |
+| 10 | **Ad Service** | ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) | `9555` | Advertisement serving |                            └────────────────┬───────────────┘                                    │    (Ingress)    │| 2 | Learn Kubernetes architecture (control plane + worker nodes) |
 
-                            └────────────────┬───────────────┘
+| 11 | **Load Generator** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | `-` | Traffic simulation (Locust) |
 
-                                             │                                    │    Frontend     │| 6 | Push Docker images to **ECR** |
-
-           ┌─────────────┬─────────────┬─────┴─────┬─────────────┬─────────────┐
-
-           │             │             │           │             │             │                                    │   (Go - :8080)  │| 7 | Deploy `mini-flipkart` manifests to EKS |
-
-           ▼             ▼             ▼           ▼             ▼             ▼
-
-    ┌─────────────┐┌─────────────┐┌─────────┐┌─────────────┐┌─────────────┐┌─────────────┐                                    └────────┬────────┘| 8 | Access app using **domain / host mapping** via Ingress |
-
-    │ 📢 AD SVC   ││ 💡 RECOMMEND││ 🛒 CART ││ 💳 CHECKOUT ││ 📦 PRODUCT  ││ 💵 CURRENCY │
-
-    │ Java:9555   ││ Python:8080 ││  :7070  ││  Go:5050    ││  Go:3550    ││ Node:7000   │                                             │
-
-    └─────────────┘└─────────────┘└────┬────┘└──────┬──────┘└─────────────┘└─────────────┘
-
-                                       │           │        ┌────────────────────────────────────┼────────────────────────────────────┐---
-
-                                       ▼           │
-
-                               ┌─────────────┐     │        │                    │               │               │                    │
-
-                               │ 🔴 REDIS    │     │
-
-                               │   :6379     │     │┌───────▼───────┐  ┌────────▼────────┐ ┌────▼────┐ ┌───────▼───────┐  ┌─────────▼─────────┐## Journey So Far (Clear Sequence)
-
-                               └─────────────┘     │
-
-                                                   ││  Ad Service   │  │ Recommendation  │ │  Cart   │ │   Checkout    │  │ Product Catalog   │
-
-                          ┌────────────────────────┼────────────────────────┐
-
-                          │                        │                        ││ (Java - 9555) │  │ (Python - 8080) │ │ (:7070) │ │  (Go - 5050)  │  │   (Go - 3550)     │```mermaid
-
-                          ▼                        ▼                        ▼
-
-                   ┌─────────────┐          ┌─────────────┐          ┌─────────────┐└───────────────┘  └─────────────────┘ └────┬────┘ └───────┬───────┘  └───────────────────┘flowchart LR
-
-                   │ 📧 EMAIL    │          │ 💰 PAYMENT  │          │ 🚚 SHIPPING │
-
-                   │ Python:8080 │          │ Node:50051  │          │  Go:50051   │                                            │              │  classDef done fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111827;
-
-                   └─────────────┘          └─────────────┘          └─────────────┘
-
-```                                    ┌───────▼───────┐      │  classDef now fill:#dbeafe,stroke:#2563eb,stroke-width:3px,color:#111827;
+| - | **Redis** | ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) | `6379` | Cart data cache storage |                                             │
 
 
 
----                                    │     Redis     │      │
-
-
-
-## 🔧 Microservices                                    │    (:6379)    │      │  P9["Project 09\nEC2 + PM2\nOne server manual"]
-
-
-
-<table>                                    └───────────────┘      │  P10["Project 10\nDocker containers\n12 boxes on one host"]
-
-<tr>
-
-<th>🔢</th>                                                           │  P11["Project 11\nEKS + Kubernetes\nAuto-heal + scale"]
-
-<th>Service</th>
-
-<th>Language</th>        ┌──────────────────────────────────────────────────┼──────────────────┐
-
-<th>Port</th>
-
-<th>Description</th>        │                         │                        │                  │  P9 --> P10 --> P11
+</td>                                             ▼                                    └────────┬────────┘| 3 | See what happens internally when DevOps applies a Deployment |
 
 </tr>
 
-<tr><td>1️⃣</td><td><b>Frontend</b></td><td>🔵 Go</td><td>8080</td><td>Web UI - Mini Flipkart Shop</td></tr>┌───────▼───────┐  ┌──────────────▼──────────────┐ ┌──────▼──────┐  ┌────────▼────────┐
-
-<tr><td>2️⃣</td><td><b>Cart Service</b></td><td>🟣 C# (.NET)</td><td>7070</td><td>Shopping cart management</td></tr>
-
-<tr><td>3️⃣</td><td><b>Product Catalog</b></td><td>🔵 Go</td><td>3550</td><td>Product listing & details</td></tr>│   Currency    │  │         Email               │ │   Payment   │  │    Shipping     │  class P9,P10 done
-
-<tr><td>4️⃣</td><td><b>Currency Service</b></td><td>🟢 Node.js</td><td>7000</td><td>Currency conversion</td></tr>
-
-<tr><td>5️⃣</td><td><b>Payment Service</b></td><td>🟢 Node.js</td><td>50051</td><td>Payment processing</td></tr>│(Node.js-7000) │  │     (Python - 8080)         │ │(Node.js-50051)│ │  (Go - 50051)   │  class P11 now
-
-<tr><td>6️⃣</td><td><b>Shipping Service</b></td><td>🔵 Go</td><td>50051</td><td>Shipping cost calculation</td></tr>
-
-<tr><td>7️⃣</td><td><b>Email Service</b></td><td>🟡 Python</td><td>8080</td><td>Order confirmation emails</td></tr>└───────────────┘  └─────────────────────────────┘ └─────────────┘  └─────────────────┘```
-
-<tr><td>8️⃣</td><td><b>Checkout Service</b></td><td>🔵 Go</td><td>5050</td><td>Checkout orchestration</td></tr>
-
-<tr><td>9️⃣</td><td><b>Recommendation</b></td><td>🟡 Python</td><td>8080</td><td>Product recommendations</td></tr>```
-
-<tr><td>🔟</td><td><b>Ad Service</b></td><td>🔴 Java</td><td>9555</td><td>Advertisement serving</td></tr>
-
-<tr><td>1️⃣1️⃣</td><td><b>Load Generator</b></td><td>🟡 Python</td><td>-</td><td>Traffic simulation (optional)</td></tr>| Project | How app runs | Main problem solved | New problem created |
-
-<tr><td>🔴</td><td><b>Redis</b></td><td>Redis</td><td>6379</td><td>Cart data storage</td></tr>
-
-</table>---|---|---|---|---|
+</table>                            ┌────────────────────────────────┐
 
 
 
----| **09 EC2** | All services on one VM with PM2 | First real deployment | Manual recovery, no auto scaling |
+<br>                            │         🖥️  FRONTEND           │                                             │| 4 | Learn Namespace, ConfigMap, Secret, Deployment, StatefulSet, Service, Ingress |
 
 
 
-## 📁 Project Structure## 🔧 Microservices| **10 Docker** | Each service in its own container | Isolation + repeatable images | Still one machine; if node dies, all containers die |
+<!-- ==================== PROJECT STRUCTURE ==================== -->                            │          (Go :8080)            │
 
 
 
-```| **11 EKS/K8s** | Containers orchestrated across nodes | **Auto-healing, scaling, rollout, traffic routing** | More concepts to learn (worth it for production) |
+<table>                            │      Mini Flipkart UI          │                                    ┌────────▼────────┐| 5 | Create **EKS cluster** in AWS Console |
 
-📦 11-Mirco-app-deployment-on-EKS/
+<tr>
 
-│| # | Service | Language | Port | Description |
+<td>                            └────────────────┬───────────────┘
 
-├── 📂 src/                              # 🔧 Source Code (11 Microservices)
 
-│   ├── adservice/                      # Java - Ad Service|---|---------|----------|------|-------------|---
 
-│   ├── cartservice/                    # C# - Cart Service
+## 📁 Project Structure                                             │                                    │    Frontend     │| 6 | Push Docker images to **ECR** |
 
-│   ├── checkoutservice/                # Go - Checkout Service| 1 | **Frontend** | Go | 8080 | Web UI for the shop |
 
-│   ├── currencyservice/                # Node.js - Currency Service
 
-│   ├── emailservice/                   # Python - Email Service| 2 | **Cart Service** | C# (.NET) | 7070 | Manages shopping cart (Redis backend) |## Why Move from Docker to Kubernetes?
+```           ┌─────────────┬─────────────┬─────┴─────┬─────────────┬─────────────┐
 
-│   ├── frontend/                       # Go - Frontend UI ⭐
+📦 11-Mirco-app-deployment-on-EKS
 
-│   ├── loadgenerator/                  # Python - Load Generator| 3 | **Product Catalog** | Go | 3550 | Product listing and details |
+│           │             │             │           │             │             │                                    │   (Go - :8080)  │| 7 | Deploy `mini-flipkart` manifests to EKS |
 
-│   ├── paymentservice/                 # Node.js - Payment Service
+├── 🔧 ekssetup.sh                    # EC2 DevOps tools installation script
 
-│   ├── productcatalogservice/          # Go - Product Catalog| 4 | **Currency Service** | Node.js | 7000 | Currency conversion |### Docker solved packaging — not production operations
+├── 🐳 docker-compose.yaml            # Build from source (development)           ▼             ▼             ▼           ▼             ▼             ▼
 
-│   ├── recommendationservice/          # Python - Recommendations
+├── 🐳 docker-compose-ecr.yaml        # ECR images (production-like)
 
-│   └── shippingservice/                # Go - Shipping Service| 5 | **Payment Service** | Node.js | 50051 | Payment processing |
+├── 📖 README.md                      # Documentation (this file)    ┌─────────────┐┌─────────────┐┌─────────┐┌─────────────┐┌─────────────┐┌─────────────┐                                    └────────┬────────┘| 8 | Access app using **domain / host mapping** via Ingress |
 
 │
 
-├── 📂 kubernetes-manifests/             # ☸️ K8s Deployment Files| 6 | **Shipping Service** | Go | 50051 | Shipping cost calculation |In Project 10 you learned:
+├── 📂 src/                           # Source code for all 11 microservices    │ 📢 AD SVC   ││ 💡 RECOMMEND││ 🛒 CART ││ 💳 CHECKOUT ││ 📦 PRODUCT  ││ 💵 CURRENCY │
 
-│   ├── namespace.yaml                  # mini-flipkart namespace
+│   ├── adservice/                    # Java
 
-│   ├── kustomization.yaml              # Kustomize config| 7 | **Email Service** | Python | 8080 | Order confirmation emails |
+│   ├── cartservice/                  # C# (.NET)    │ Java:9555   ││ Python:8080 ││  :7070  ││  Go:5050    ││  Go:3550    ││ Node:7000   │                                             │
 
-│   ├── ingress.yaml                    # Ingress rules
+│   ├── checkoutservice/              # Go
 
-│   ├── frontend.yaml                   # Frontend deployment| 8 | **Checkout Service** | Go | 5050 | Order checkout orchestration |- Build image once → run anywhere
+│   ├── currencyservice/              # Node.js    └─────────────┘└─────────────┘└────┬────┘└──────┬──────┘└─────────────┘└─────────────┘
 
-│   ├── redis.yaml                      # Redis deployment
+│   ├── emailservice/                 # Python
 
-│   └── *service.yaml                   # All service deployments| 9 | **Recommendation** | Python | 8080 | Product recommendations |- Each microservice in its own container
+│   ├── frontend/                     # Go (Web UI)                                       │           │        ┌────────────────────────────────────┼────────────────────────────────────┐---
 
-│
+│   ├── loadgenerator/                # Python (Locust)
 
-├── 📂 release/                          # 📦 Pre-built manifests| 10 | **Ad Service** | Java | 9555 | Advertisement serving |- `docker ps`, `docker logs`, `docker exec` for debugging
+│   ├── paymentservice/               # Node.js                                       ▼           │
 
-│   └── kubernetes-manifests.yaml       # Combined K8s manifest
+│   ├── productcatalogservice/        # Go
 
-│| 11 | **Load Generator** | Python | - | Traffic simulation (optional) |
+│   ├── recommendationservice/        # Python                               ┌─────────────┐     │        │                    │               │               │                    │
 
-├── 🐳 docker-compose.yaml               # Build from source (dev)
+│   └── shippingservice/              # Go
 
-├── 🐳 docker-compose-ecr.yaml           # ECR images (prod-like)| - | **Redis** | Redis | 6379 | Cart data storage |But on a single Docker host:
+│                               │ 🔴 REDIS    │     │
 
-├── 🔧 ekssetup.sh                       # EC2 setup script
+├── 📂 kubernetes-manifests/          # Kubernetes deployment files
 
-└── 📖 README.md                         # This file
+│   ├── namespace.yaml                # mini-flipkart namespace                               │   :6379     │     │┌───────▼───────┐  ┌────────▼────────┐ ┌────▼────┐ ┌───────▼───────┐  ┌─────────▼─────────┐## Journey So Far (Clear Sequence)
+
+│   ├── kustomization.yaml            # Kustomize configuration
+
+│   ├── ingress.yaml                  # Ingress rules                               └─────────────┘     │
+
+│   └── *.yaml                        # All service deployments
+
+│                                                   ││  Ad Service   │  │ Recommendation  │ │  Cart   │ │   Checkout    │  │ Product Catalog   │
+
+└── 📂 release/                       # Pre-built combined manifests
+
+    └── kubernetes-manifests.yaml                          ┌────────────────────────┼────────────────────────┐
 
 ```
 
----| Problem | What happens |
+                          │                        │                        ││ (Java - 9555) │  │ (Python - 8080) │ │ (:7070) │ │  (Go - 5050)  │  │   (Go - 3550)     │```mermaid
 
----
+</td>
 
-|---|---|
+</tr>                          ▼                        ▼                        ▼
 
-## 🚀 Deployment Steps
+</table>
 
-## 📦 Prerequisites| Container crash | Stays down until you manually `docker run` again |
+                   ┌─────────────┐          ┌─────────────┐          ┌─────────────┐└───────────────┘  └─────────────────┘ └────┬────┘ └───────┬───────┘  └───────────────────┘flowchart LR
 
-### 📦 STEP 1: Create EC2 & Install Software
+<br>
 
-| Server crash | All 12 containers go offline together |
+                   │ 📧 EMAIL    │          │ 💰 PAYMENT  │          │ 🚚 SHIPPING │
+
+<!-- ==================== STEP 1: EC2 SETUP ==================== -->
+
+                   │ Python:8080 │          │ Node:50051  │          │  Go:50051   │                                            │              │  classDef done fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111827;
+
+<table>
+
+<tr>                   └─────────────┘          └─────────────┘          └─────────────┘
+
+<td>
+
+```                                    ┌───────▼───────┐      │  classDef now fill:#dbeafe,stroke:#2563eb,stroke-width:3px,color:#111827;
+
+## 📦 Step 1: Create EC2 & Install Software
+
+
+
+### 1.1 Launch EC2 Instance
+
+---                                    │     Redis     │      │
+
+| Setting | Value |
+
+|:---|:---|
+
+| **AMI** | Ubuntu 22.04 / 24.04 LTS |
+
+| **Instance Type** | `t3.medium` (or `t2.micro` for free tier) |## 🔧 Microservices                                    │    (:6379)    │      │  P9["Project 09\nEC2 + PM2\nOne server manual"]
+
+| **IAM Role** | `mini-flipkart-devops-ec2-role` with `AdministratorAccess` |
+
+| **Security Group** | Allow SSH (22), HTTP (80), HTTPS (443), Custom (8080) |
+
+| **Storage** | 20 GB gp3 |
+
+<table>                                    └───────────────┘      │  P10["Project 10\nDocker containers\n12 boxes on one host"]
+
+### 1.2 Connect and Setup
+
+<tr>
 
 ```bash
 
-# Launch EC2 (Ubuntu 22.04/24.04) with:- **AWS Account** with appropriate permissions| Traffic spike | You manually add more containers / bigger EC2 |
-
-# - Instance Type: t3.medium (or t2.micro for free tier)
-
-# - IAM Role: mini-flipkart-devops-ec2-role (AdministratorAccess)- **EC2 Instance** (Ubuntu 22.04/24.04) for DevOps server| New app version | Manual stop old container, start new one (downtime risk) |
-
-# - Security Group: Allow SSH (22), HTTP (80), HTTPS (443)
-
-- **Docker** and **Docker Compose**| Secret/config change | Rebuild or re-run with new `-e` flags |
-
-# SSH into EC2
-
-ssh -i your-key.pem ubuntu@<EC2-PUBLIC-IP>- **kubectl** for Kubernetes management
-
-
-
-# Clone repository- **AWS CLI** configured with credentials### Kubernetes (on EKS) gives you production behavior
-
-git clone https://github.com/devopsmate7/11-Mirco-app-deployment-on-EKS.git
-
-cd 11-Mirco-app-deployment-on-EKS- **eksctl** (optional, for EKS management)
-
-
-
-# Run setup script (installs Docker, kubectl, AWS CLI, Helm, eksctl)| Capability | Real-life meaning |
-
-bash ekssetup.sh
-
----|---|---|
-
-# ⚠️ IMPORTANT: Reconnect SSH for docker group
-
-exit| **Auto-healing** | Pod dies → controller creates a new pod automatically |
+# SSH into EC2<th>🔢</th>                                                           │  P11["Project 11\nEKS + Kubernetes\nAuto-heal + scale"]
 
 ssh -i your-key.pem ubuntu@<EC2-PUBLIC-IP>
 
-## 🚀 Deployment Options| **Self-healing nodes** | Unhealthy node → workloads rescheduled to healthy nodes |
+<th>Service</th>
 
-# Verify installations
+# Clone repository
 
-docker --version| **Scaling** | Increase replicas when load increases |
+git clone https://github.com/devopsmate7/11-Mirco-app-deployment-on-EKS.git<th>Language</th>        ┌──────────────────────────────────────────────────┼──────────────────┐
 
-kubectl version --client
+cd 11-Mirco-app-deployment-on-EKS
 
-aws --version### Option 1: Docker Compose (Local/Development)| **Rolling updates** | Deploy v2 without taking whole app down |
+<th>Port</th>
+
+# Run setup script
+
+bash ekssetup.sh<th>Description</th>        │                         │                        │                  │  P9 --> P10 --> P11
+
+
+
+# ⚠️ IMPORTANT: Reconnect SSH for docker group changes</tr>
+
+exit
+
+ssh -i your-key.pem ubuntu@<EC2-PUBLIC-IP><tr><td>1️⃣</td><td><b>Frontend</b></td><td>🔵 Go</td><td>8080</td><td>Web UI - Mini Flipkart Shop</td></tr>┌───────▼───────┐  ┌──────────────▼──────────────┐ ┌──────▼──────┐  ┌────────▼────────┐
 
 ```
 
-| **Service discovery** | Services talk by DNS name (`api-gateway`, `mysql`) |
+<tr><td>2️⃣</td><td><b>Cart Service</b></td><td>🟣 C# (.NET)</td><td>7070</td><td>Shopping cart management</td></tr>
 
----
+### 1.3 Verify Installations
 
-**Use Case:** Build images from source code for local development and testing.| **Ingress routing** | One domain routes `/` to frontend and `/api` to gateway |
-
-### 🐳 STEP 2: Docker Compose - Build from Source
-
-| **Secrets management** | Passwords in Secret object, not hardcoded in image |
-
-> **Path:** `src/*` → `docker-compose.yaml`
-
-**File:** `docker-compose.yaml`
+<tr><td>3️⃣</td><td><b>Product Catalog</b></td><td>🔵 Go</td><td>3550</td><td>Product listing & details</td></tr>│   Currency    │  │         Email               │ │   Payment   │  │    Shipping     │  class P9,P10 done
 
 ```bash
 
-cd ~/11-Mirco-app-deployment-on-EKS> **Simple story:** Docker packs your lunch. Kubernetes runs the entire restaurant — staff replacement, more counters during rush hour, and routing customers to the right counter.
+docker --version          # Docker<tr><td>4️⃣</td><td><b>Currency Service</b></td><td>🟢 Node.js</td><td>7000</td><td>Currency conversion</td></tr>
+
+kubectl version --client  # Kubernetes CLI
+
+aws --version             # AWS CLI<tr><td>5️⃣</td><td><b>Payment Service</b></td><td>🟢 Node.js</td><td>50051</td><td>Payment processing</td></tr>│(Node.js-7000) │  │     (Python - 8080)         │ │(Node.js-50051)│ │  (Go - 50051)   │  class P11 now
+
+helm version              # Helm
+
+eksctl version            # eksctl<tr><td>6️⃣</td><td><b>Shipping Service</b></td><td>🔵 Go</td><td>50051</td><td>Shipping cost calculation</td></tr>
+
+```
+
+<tr><td>7️⃣</td><td><b>Email Service</b></td><td>🟡 Python</td><td>8080</td><td>Order confirmation emails</td></tr>└───────────────┘  └─────────────────────────────┘ └─────────────┘  └─────────────────┘```
+
+</td>
+
+</tr><tr><td>8️⃣</td><td><b>Checkout Service</b></td><td>🔵 Go</td><td>5050</td><td>Checkout orchestration</td></tr>
+
+</table>
+
+<tr><td>9️⃣</td><td><b>Recommendation</b></td><td>🟡 Python</td><td>8080</td><td>Product recommendations</td></tr>```
+
+<br>
+
+<tr><td>🔟</td><td><b>Ad Service</b></td><td>🔴 Java</td><td>9555</td><td>Advertisement serving</td></tr>
+
+<!-- ==================== STEP 2: DOCKER COMPOSE SOURCE ==================== -->
+
+<tr><td>1️⃣1️⃣</td><td><b>Load Generator</b></td><td>🟡 Python</td><td>-</td><td>Traffic simulation (optional)</td></tr>| Project | How app runs | Main problem solved | New problem created |
+
+<table>
+
+<tr><tr><td>🔴</td><td><b>Redis</b></td><td>Redis</td><td>6379</td><td>Cart data storage</td></tr>
+
+<td>
+
+</table>---|---|---|---|---|
+
+## 🐳 Step 2: Docker Compose - Build from Source
 
 
 
-# Build and run all services from source```bash
+> **File:** `docker-compose.yaml` | **Source:** `src/*`
+
+---| **09 EC2** | All services on one VM with PM2 | First real deployment | Manual recovery, no auto scaling |
+
+### 2.1 Build and Run
+
+
+
+```bash
+
+cd ~/11-Mirco-app-deployment-on-EKS## 📁 Project Structure## 🔧 Microservices| **10 Docker** | Each service in its own container | Isolation + repeatable images | Still one machine; if node dies, all containers die |
+
+
+
+# Build and start all services
 
 docker compose up -d --build
 
-# Clone the repository---
+```| **11 EKS/K8s** | Containers orchestrated across nodes | **Auto-healing, scaling, rollout, traffic routing** | More concepts to learn (worth it for production) |
 
 # Check status
 
-docker compose psgit clone https://github.com/devopsmate7/11-Mirco-app-deployment-on-EKS.git
+docker compose ps📦 11-Mirco-app-deployment-on-EKS/
 
 
 
-# Test applicationcd 11-Mirco-app-deployment-on-EKS## Kubernetes Architecture (Control Plane + Worker Nodes)
+# View logs│| # | Service | Language | Port | Description |
 
-curl http://localhost:8080
+docker compose logs -f frontend
 
-
-
-# View logs
-
-docker compose logs -f frontend# Build and run all services```mermaid
+```├── 📂 src/                              # 🔧 Source Code (11 Microservices)
 
 
 
-# Stop when done testingdocker compose up -d --buildflowchart TB
+### 2.2 Access Application│   ├── adservice/                      # Java - Ad Service|---|---------|----------|------|-------------|---
+
+
+
+| URL | Port |│   ├── cartservice/                    # C# - Cart Service
+
+|:---|:---:|
+
+| `http://<EC2-PUBLIC-IP>:8080` | **8080** |│   ├── checkoutservice/                # Go - Checkout Service| 1 | **Frontend** | Go | 8080 | Web UI for the shop |
+
+
+
+### 2.3 Stop Services│   ├── currencyservice/                # Node.js - Currency Service
+
+
+
+```bash│   ├── emailservice/                   # Python - Email Service| 2 | **Cart Service** | C# (.NET) | 7070 | Manages shopping cart (Redis backend) |## Why Move from Docker to Kubernetes?
 
 docker compose down
 
-```  classDef control fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#111827;
+```│   ├── frontend/                       # Go - Frontend UI ⭐
 
 
 
-| Access URL | Port |# Check status  classDef worker fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#111827;
+</td>│   ├── loadgenerator/                  # Python - Load Generator| 3 | **Product Catalog** | Go | 3550 | Product listing and details |
+
+</tr>
+
+</table>│   ├── paymentservice/                 # Node.js - Payment Service
+
+
+
+<br>│   ├── productcatalogservice/          # Go - Product Catalog| 4 | **Currency Service** | Node.js | 7000 | Currency conversion |### Docker solved packaging — not production operations
+
+
+
+<!-- ==================== STEP 3: BUILD & PUSH TO ECR ==================== -->│   ├── recommendationservice/          # Python - Recommendations
+
+
+
+<table>│   └── shippingservice/                # Go - Shipping Service| 5 | **Payment Service** | Node.js | 50051 | Payment processing |
+
+<tr>
+
+<td>│
+
+
+
+## 📤 Step 3: Build & Push Images to ECR├── 📂 kubernetes-manifests/             # ☸️ K8s Deployment Files| 6 | **Shipping Service** | Go | 50051 | Shipping cost calculation |In Project 10 you learned:
+
+
+
+### 3.1 Create ECR Repositories│   ├── namespace.yaml                  # mini-flipkart namespace
+
+
+
+```bash│   ├── kustomization.yaml              # Kustomize config| 7 | **Email Service** | Python | 8080 | Order confirmation emails |
+
+# Create all 11 repositories
+
+for repo in adservice cartservice checkoutservice currencyservice emailservice \│   ├── ingress.yaml                    # Ingress rules
+
+            frontend loadgenerator paymentservice productcatalogservice \
+
+            recommendationservice shippingservice; do│   ├── frontend.yaml                   # Frontend deployment| 8 | **Checkout Service** | Go | 5050 | Order checkout orchestration |- Build image once → run anywhere
+
+    aws ecr create-repository --repository-name $repo --region us-east-1
+
+done│   ├── redis.yaml                      # Redis deployment
+
+```
+
+│   └── *service.yaml                   # All service deployments| 9 | **Recommendation** | Python | 8080 | Product recommendations |- Each microservice in its own container
+
+### 3.2 Login to ECR
+
+│
+
+```bash
+
+# Replace <AWS_ACCOUNT_ID> with your account ID├── 📂 release/                          # 📦 Pre-built manifests| 10 | **Ad Service** | Java | 9555 | Advertisement serving |- `docker ps`, `docker logs`, `docker exec` for debugging
+
+aws ecr get-login-password --region us-east-1 | \
+
+docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com│   └── kubernetes-manifests.yaml       # Combined K8s manifest
+
+```
+
+│| 11 | **Load Generator** | Python | - | Traffic simulation (optional) |
+
+### 3.3 Build, Tag & Push All Images
+
+├── 🐳 docker-compose.yaml               # Build from source (dev)
+
+```bash
+
+cd ~/11-Mirco-app-deployment-on-EKS/src├── 🐳 docker-compose-ecr.yaml           # ECR images (prod-like)| - | **Redis** | Redis | 6379 | Cart data storage |But on a single Docker host:
+
+ACCOUNT_ID=<AWS_ACCOUNT_ID>
+
+REGION=us-east-1├── 🔧 ekssetup.sh                       # EC2 setup script
+
+
+
+# Build and push each service└── 📖 README.md                         # This file
+
+for svc in emailservice checkoutservice recommendationservice frontend \
+
+           paymentservice productcatalogservice loadgenerator currencyservice \```
+
+           shippingservice adservice; do
+
+    echo "🔨 Building $svc..."---| Problem | What happens |
+
+    cd $svc
+
+    docker build -t $svc .---
+
+    docker tag $svc:latest $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$svc:latest
+
+    docker push $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$svc:latest|---|---|
+
+    cd ..
+
+done## 🚀 Deployment Steps
+
+
+
+# Special case: cartservice (Dockerfile in src subdirectory)## 📦 Prerequisites| Container crash | Stays down until you manually `docker run` again |
+
+cd cartservice/src
+
+docker build -t cartservice .### 📦 STEP 1: Create EC2 & Install Software
+
+docker tag cartservice:latest $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/cartservice:latest
+
+docker push $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/cartservice:latest| Server crash | All 12 containers go offline together |
+
+cd ../..
+
+``````bash
+
+
+
+### 3.4 Verify Images in ECR# Launch EC2 (Ubuntu 22.04/24.04) with:- **AWS Account** with appropriate permissions| Traffic spike | You manually add more containers / bigger EC2 |
+
+
+
+```bash# - Instance Type: t3.medium (or t2.micro for free tier)
+
+aws ecr describe-repositories --region us-east-1 --query 'repositories[].repositoryName'
+
+```# - IAM Role: mini-flipkart-devops-ec2-role (AdministratorAccess)- **EC2 Instance** (Ubuntu 22.04/24.04) for DevOps server| New app version | Manual stop old container, start new one (downtime risk) |
+
+
+
+</td># - Security Group: Allow SSH (22), HTTP (80), HTTPS (443)
+
+</tr>
+
+</table>- **Docker** and **Docker Compose**| Secret/config change | Rebuild or re-run with new `-e` flags |
+
+
+
+<br># SSH into EC2
+
+
+
+<!-- ==================== STEP 4: DOCKER COMPOSE ECR ==================== -->ssh -i your-key.pem ubuntu@<EC2-PUBLIC-IP>- **kubectl** for Kubernetes management
+
+
+
+<table>
+
+<tr>
+
+<td># Clone repository- **AWS CLI** configured with credentials### Kubernetes (on EKS) gives you production behavior
+
+
+
+## 🚀 Step 4: Docker Compose - ECR Imagesgit clone https://github.com/devopsmate7/11-Mirco-app-deployment-on-EKS.git
+
+
+
+> **File:** `docker-compose-ecr.yaml`cd 11-Mirco-app-deployment-on-EKS- **eksctl** (optional, for EKS management)
+
+
+
+### 4.1 Update Account ID (if needed)
+
+
+
+```bash# Run setup script (installs Docker, kubectl, AWS CLI, Helm, eksctl)| Capability | Real-life meaning |
+
+# Replace account ID in docker-compose-ecr.yaml
+
+sed -i 's/<AWS_ACCOUNT_ID>/<YOUR_ACCOUNT_ID>/g' docker-compose-ecr.yamlbash ekssetup.sh
+
+```
+
+---|---|---|
+
+### 4.2 Deploy with ECR Images
+
+# ⚠️ IMPORTANT: Reconnect SSH for docker group
+
+```bash
+
+cd ~/11-Mirco-app-deployment-on-EKSexit| **Auto-healing** | Pod dies → controller creates a new pod automatically |
+
+
+
+# Pull and run ECR imagesssh -i your-key.pem ubuntu@<EC2-PUBLIC-IP>
+
+docker compose -f docker-compose-ecr.yaml up -d
+
+## 🚀 Deployment Options| **Self-healing nodes** | Unhealthy node → workloads rescheduled to healthy nodes |
+
+# Check status
+
+docker compose -f docker-compose-ecr.yaml ps# Verify installations
+
+```
+
+docker --version| **Scaling** | Increase replicas when load increases |
+
+### 4.3 Access Application
+
+kubectl version --client
+
+| URL | Port |
+
+|:---|:---:|aws --version### Option 1: Docker Compose (Local/Development)| **Rolling updates** | Deploy v2 without taking whole app down |
+
+| `http://<EC2-PUBLIC-IP>:80` | **80** |
+
+```
+
+### 4.4 Cleanup
+
+| **Service discovery** | Services talk by DNS name (`api-gateway`, `mysql`) |
+
+```bash
+
+docker compose -f docker-compose-ecr.yaml down---
+
+```
+
+**Use Case:** Build images from source code for local development and testing.| **Ingress routing** | One domain routes `/` to frontend and `/api` to gateway |
+
+</td>
+
+</tr>### 🐳 STEP 2: Docker Compose - Build from Source
+
+</table>
+
+| **Secrets management** | Passwords in Secret object, not hardcoded in image |
+
+<br>
+
+> **Path:** `src/*` → `docker-compose.yaml`
+
+<!-- ==================== STEP 5: KUBERNETES EKS ==================== -->
+
+**File:** `docker-compose.yaml`
+
+<table>
+
+<tr>```bash
+
+<td>
+
+cd ~/11-Mirco-app-deployment-on-EKS> **Simple story:** Docker packs your lunch. Kubernetes runs the entire restaurant — staff replacement, more counters during rush hour, and routing customers to the right counter.
+
+## ☸️ Step 5: Kubernetes (EKS) Production Deployment
+
+
+
+### 5.1 Create EKS Cluster
+
+# Build and run all services from source```bash
+
+Create cluster via **AWS Console** or **eksctl**:
+
+docker compose up -d --build
+
+```bash
+
+# Using eksctl# Clone the repository---
+
+eksctl create cluster \
+
+  --name mini-flipkart-eks \# Check status
+
+  --region us-east-1 \
+
+  --nodegroup-name mf-nodes \docker compose psgit clone https://github.com/devopsmate7/11-Mirco-app-deployment-on-EKS.git
+
+  --node-type t3.medium \
+
+  --nodes 2
+
+```
+
+# Test applicationcd 11-Mirco-app-deployment-on-EKS## Kubernetes Architecture (Control Plane + Worker Nodes)
+
+### 5.2 Connect to EKS Cluster
+
+curl http://localhost:8080
+
+```bash
+
+# Update kubeconfig
+
+aws eks update-kubeconfig --name mini-flipkart-eks --region us-east-1
+
+# View logs
+
+# Verify connection
+
+kubectl get nodesdocker compose logs -f frontend# Build and run all services```mermaid
+
+```
+
+
+
+### 5.3 Deploy Application
+
+# Stop when done testingdocker compose up -d --buildflowchart TB
+
+```bash
+
+cd ~/11-Mirco-app-deployment-on-EKSdocker compose down
+
+
+
+# Deploy using Kustomize```  classDef control fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#111827;
+
+kubectl apply -k kubernetes-manifests/
+
+
+
+# Watch pods starting
+
+kubectl get pods -n mini-flipkart -w| Access URL | Port |# Check status  classDef worker fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#111827;
+
+```
 
 |------------|------|
 
+### 5.4 Install Ingress Controller
+
 | `http://<EC2-IP>:8080` | 8080 |docker compose ps  classDef store fill:#ffedd5,stroke:#f97316,stroke-width:2px,color:#111827;
 
+```bash
 
+# Install NGINX Ingress Controller
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/aws/deploy.yaml
+
+---
+
+# Get LoadBalancer URL
+
+kubectl get svc -n ingress-nginx ingress-nginx-controller
+
+```
+
+### 📤 STEP 3: Build & Push Images to ECR# View logs  subgraph CP["Control Plane (EKS manages this for you)"]
+
+### 5.5 Access Application
+
+
+
+```bash
+
+# Get Ingress address#### 3.1 Create ECR Repositoriesdocker compose logs -f frontend    API["API Server\nFront door of cluster"]
+
+kubectl get ingress -n mini-flipkart
+
+
+
+# Add to /etc/hosts (local machine)
+
+<LOADBALANCER-IP>  mini-flipkart.com```bash    ETCD["etcd\nCluster memory / state DB"]
+
+
+
+# Open in browser# Create all 11 ECR repositories
+
+http://mini-flipkart.com
+
+```aws ecr create-repository --repository-name adservice --region us-east-1# Access application    SCH["Scheduler\nPicks best node"]
+
+
+
+### 5.6 Useful Commandsaws ecr create-repository --repository-name cartservice --region us-east-1
+
+
+
+```bashaws ecr create-repository --repository-name checkoutservice --region us-east-1curl http://localhost:8080    CTL["Controllers\nKeep desired state"]
+
+# Check all resources
+
+kubectl get all -n mini-flipkartaws ecr create-repository --repository-name currencyservice --region us-east-1
+
+
+
+# View pod logsaws ecr create-repository --repository-name emailservice --region us-east-1  end
+
+kubectl logs -f <pod-name> -n mini-flipkart
+
+aws ecr create-repository --repository-name frontend --region us-east-1
+
+# Describe pod for debugging
+
+kubectl describe pod <pod-name> -n mini-flipkartaws ecr create-repository --repository-name paymentservice --region us-east-1# Stop all services
+
+
+
+# Delete deploymentaws ecr create-repository --repository-name productcatalogservice --region us-east-1
+
+kubectl delete -k kubernetes-manifests/
+
+```aws ecr create-repository --repository-name recommendationservice --region us-east-1docker compose down  subgraph W1["Worker Node 1"]
+
+
+
+</td>aws ecr create-repository --repository-name shippingservice --region us-east-1
+
+</tr>
+
+</table>aws ecr create-repository --repository-name loadgenerator --region us-east-1```    K1["kubelet agent"]
+
+
+
+<br>```
+
+
+
+<!-- ==================== QUICK COMMANDS ==================== -->    P1["Pod: api-gateway"]
+
+
+
+<table>#### 3.2 Login to ECR
+
+<tr>
+
+<td>---    P2["Pod: auth-service"]
+
+
+
+## ⚡ Quick Commands Reference```bash
+
+
+
+| Action | Command |aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com  end
+
+|:---|:---|
+
+| **EC2 Setup** | `bash ekssetup.sh` |```
+
+| **Docker Compose (Source)** | `docker compose up -d --build` |
+
+| **Docker Compose (ECR)** | `docker compose -f docker-compose-ecr.yaml up -d` |### Option 2: Docker Compose with ECR Images
+
+| **Stop Docker** | `docker compose down` |
+
+| **Connect to EKS** | `aws eks update-kubeconfig --name mini-flipkart-eks --region us-east-1` |#### 3.3 Build & Push All Images
+
+| **Deploy to K8s** | `kubectl apply -k kubernetes-manifests/` |
+
+| **Check Pods** | `kubectl get pods -n mini-flipkart` |  subgraph W2["Worker Node 2"]
+
+| **Check Services** | `kubectl get svc -n mini-flipkart` |
+
+| **Check Ingress** | `kubectl get ingress -n mini-flipkart` |```bash
+
+| **Delete from K8s** | `kubectl delete -k kubernetes-manifests/` |
+
+cd ~/11-Mirco-app-deployment-on-EKS/src**Use Case:** Deploy using pre-built images from Amazon ECR (faster deployment, no build required).    K2["kubelet agent"]
+
+</td>
+
+</tr>
+
+</table>
+
+# 📧 emailservice    P3["Pod: web"]
+
+<br>
+
+cd emailservice && docker build -t emailservice . && \
+
+<!-- ==================== TROUBLESHOOTING ==================== -->
+
+docker tag emailservice:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/emailservice:latest && \**File:** `docker-compose-ecr.yaml`    P4["Pod: product-service"]
+
+<table>
+
+<tr>docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/emailservice:latest && cd ..
+
+<td>
+
+  end
+
+## 🔧 Troubleshooting
+
+# ✅ checkoutservice
+
+| Issue | Solution |
+
+|:---|:---|cd checkoutservice && docker build -t checkoutservice . && \#### Step 1: Setup EC2 DevOps Server
+
+| **Pods not starting** | `kubectl describe pod <pod-name> -n mini-flipkart` |
+
+| **Cannot pull ECR images** | Ensure node role has `AmazonEC2ContainerRegistryReadOnly` policy |docker tag checkoutservice:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/checkoutservice:latest && \
+
+| **kubectl access denied** | Add IAM role to EKS access entries via Console |
+
+| **Node group quota error** | Use SPOT instances: `--capacity-type SPOT` |docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/checkoutservice:latest && cd ..  API <--> ETCD
+
+| **Docker permission denied** | Run `sudo usermod -aG docker $USER` and reconnect |
+
+
+
+</td>
+
+</tr># 💡 recommendationservice```bash  API --> SCH
+
+</table>
+
+cd recommendationservice && docker build -t recommendationservice . && \
+
+<br>
+
+docker tag recommendationservice:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/recommendationservice:latest && \# Run the setup script (installs Docker, kubectl, AWS CLI, etc.)  API --> CTL
+
+<!-- ==================== AUTHOR ==================== -->
+
+docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/recommendationservice:latest && cd ..
+
+<div align="center">
+
+bash ekssetup.sh  CTL <--> ETCD
+
+---
+
+# 🖥️ frontend
+
+## 👤 Author
+
+cd frontend && docker build -t frontend . && \  SCH --> API
+
+**devopsmate7**
+
+docker tag frontend:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/frontend:latest && \
+
+[![GitHub](https://img.shields.io/badge/GitHub-devopsmate7-181717?style=for-the-badge&logo=github)](https://github.com/devopsmate7)
+
+docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/frontend:latest && cd ..# Reconnect SSH for docker group to take effect  API --> K1
 
 ---
 
 
 
-### 📤 STEP 3: Build & Push Images to ECR# View logs  subgraph CP["Control Plane (EKS manages this for you)"]
+<p>
 
+  <b>⭐ Star this repository if you found it helpful! ⭐</b># 💰 paymentserviceexit  API --> K2
 
-
-#### 3.1 Create ECR Repositoriesdocker compose logs -f frontend    API["API Server\nFront door of cluster"]
-
-
-
-```bash    ETCD["etcd\nCluster memory / state DB"]
-
-# Create all 11 ECR repositories
-
-aws ecr create-repository --repository-name adservice --region us-east-1# Access application    SCH["Scheduler\nPicks best node"]
-
-aws ecr create-repository --repository-name cartservice --region us-east-1
-
-aws ecr create-repository --repository-name checkoutservice --region us-east-1curl http://localhost:8080    CTL["Controllers\nKeep desired state"]
-
-aws ecr create-repository --repository-name currencyservice --region us-east-1
-
-aws ecr create-repository --repository-name emailservice --region us-east-1  end
-
-aws ecr create-repository --repository-name frontend --region us-east-1
-
-aws ecr create-repository --repository-name paymentservice --region us-east-1# Stop all services
-
-aws ecr create-repository --repository-name productcatalogservice --region us-east-1
-
-aws ecr create-repository --repository-name recommendationservice --region us-east-1docker compose down  subgraph W1["Worker Node 1"]
-
-aws ecr create-repository --repository-name shippingservice --region us-east-1
-
-aws ecr create-repository --repository-name loadgenerator --region us-east-1```    K1["kubelet agent"]
-
-```
-
-    P1["Pod: api-gateway"]
-
-#### 3.2 Login to ECR
-
----    P2["Pod: auth-service"]
-
-```bash
-
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com  end
-
-```
-
-### Option 2: Docker Compose with ECR Images
-
-#### 3.3 Build & Push All Images
-
-  subgraph W2["Worker Node 2"]
-
-```bash
-
-cd ~/11-Mirco-app-deployment-on-EKS/src**Use Case:** Deploy using pre-built images from Amazon ECR (faster deployment, no build required).    K2["kubelet agent"]
-
-
-
-# 📧 emailservice    P3["Pod: web"]
-
-cd emailservice && docker build -t emailservice . && \
-
-docker tag emailservice:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/emailservice:latest && \**File:** `docker-compose-ecr.yaml`    P4["Pod: product-service"]
-
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/emailservice:latest && cd ..
-
-  end
-
-# ✅ checkoutservice
-
-cd checkoutservice && docker build -t checkoutservice . && \#### Step 1: Setup EC2 DevOps Server
-
-docker tag checkoutservice:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/checkoutservice:latest && \
-
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/checkoutservice:latest && cd ..  API <--> ETCD
-
-
-
-# 💡 recommendationservice```bash  API --> SCH
-
-cd recommendationservice && docker build -t recommendationservice . && \
-
-docker tag recommendationservice:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/recommendationservice:latest && \# Run the setup script (installs Docker, kubectl, AWS CLI, etc.)  API --> CTL
-
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/recommendationservice:latest && cd ..
-
-bash ekssetup.sh  CTL <--> ETCD
-
-# 🖥️ frontend
-
-cd frontend && docker build -t frontend . && \  SCH --> API
-
-docker tag frontend:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/frontend:latest && \
-
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/frontend:latest && cd ..# Reconnect SSH for docker group to take effect  API --> K1
-
-
-
-# 💰 paymentserviceexit  API --> K2
+</p>
 
 cd paymentservice && docker build -t paymentservice . && \
 
-docker tag paymentservice:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/paymentservice:latest && \# ssh back in  K1 --> P1
+<p>
+
+  Made with ❤️ for DevOps Learningdocker tag paymentservice:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/paymentservice:latest && \# ssh back in  K1 --> P1
+
+</p>
 
 docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/paymentservice:latest && cd ..
+
+</div>
 
 ```  K1 --> P2
 
@@ -1584,6 +2132,10 @@ aws eks create-nodegroup \
 ``````bash
 
 kubectl get pods -n ingress-nginx
+
+
+I'll update the README to add the step about changing hosts to access via mini-flipkart.com in the Kubernetes section.
+
 
 ---```
 
