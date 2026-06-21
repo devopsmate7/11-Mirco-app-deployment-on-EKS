@@ -1,0 +1,186 @@
+# Mini Flipkart - Docker Compose with ECR Images
+# Usage: docker compose -f docker-compose-ecr.yaml up -d
+
+services:
+  # Redis - Cart Storage
+  redis-cart:
+    image: redis:7.2-alpine
+    container_name: redis-cart
+    ports:
+      - "6379:6379"
+    networks:
+      - miniflipkart-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Ad Service
+  adservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/adservice:latest
+    container_name: adservice
+    ports:
+      - "9555:9555"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=9555
+
+  # Cart Service
+  cartservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/cartservice:latest
+    container_name: cartservice
+    ports:
+      - "7070:7070"
+    networks:
+      - miniflipkart-network
+    environment:
+      - REDIS_ADDR=redis-cart:6379
+    depends_on:
+      redis-cart:
+        condition: service_healthy
+
+  # Checkout Service
+  checkoutservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/checkoutservice:latest
+    container_name: checkoutservice
+    ports:
+      - "5050:5050"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=5050
+      - PRODUCT_CATALOG_SERVICE_ADDR=productcatalogservice:3550
+      - SHIPPING_SERVICE_ADDR=shippingservice:50051
+      - PAYMENT_SERVICE_ADDR=paymentservice:50051
+      - EMAIL_SERVICE_ADDR=emailservice:8080
+      - CURRENCY_SERVICE_ADDR=currencyservice:7000
+      - CART_SERVICE_ADDR=cartservice:7070
+    depends_on:
+      - productcatalogservice
+      - shippingservice
+      - paymentservice
+      - emailservice
+      - currencyservice
+      - cartservice
+
+  # Currency Service
+  currencyservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/currencyservice:latest
+    container_name: currencyservice
+    ports:
+      - "7000:7000"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=7000
+      - DISABLE_PROFILER=1
+
+  # Email Service
+  emailservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/emailservice:latest
+    container_name: emailservice
+    ports:
+      - "5000:8080"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=8080
+      - DISABLE_PROFILER=1
+
+  # Frontend - Main UI
+  frontend:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+    container_name: frontend
+    ports:
+      - "80:8080"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=8080
+      - PRODUCT_CATALOG_SERVICE_ADDR=productcatalogservice:3550
+      - CURRENCY_SERVICE_ADDR=currencyservice:7000
+      - CART_SERVICE_ADDR=cartservice:7070
+      - RECOMMENDATION_SERVICE_ADDR=recommendationservice:8080
+      - SHIPPING_SERVICE_ADDR=shippingservice:50051
+      - CHECKOUT_SERVICE_ADDR=checkoutservice:5050
+      - AD_SERVICE_ADDR=adservice:9555
+      - ENABLE_PROFILER=0
+    depends_on:
+      - productcatalogservice
+      - currencyservice
+      - cartservice
+      - recommendationservice
+      - shippingservice
+      - checkoutservice
+      - adservice
+
+  # Payment Service
+  paymentservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/paymentservice:latest
+    container_name: paymentservice
+    ports:
+      - "50051:50051"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=50051
+      - DISABLE_PROFILER=1
+
+  # Product Catalog Service
+  productcatalogservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/productcatalogservice:latest
+    container_name: productcatalogservice
+    ports:
+      - "3550:3550"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=3550
+      - DISABLE_PROFILER=1
+
+  # Recommendation Service
+  recommendationservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/recommendationservice:latest
+    container_name: recommendationservice
+    ports:
+      - "8081:8080"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=8080
+      - PRODUCT_CATALOG_SERVICE_ADDR=productcatalogservice:3550
+      - DISABLE_PROFILER=1
+    depends_on:
+      - productcatalogservice
+
+  # Shipping Service
+  shippingservice:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/shippingservice:latest
+    container_name: shippingservice
+    ports:
+      - "50052:50051"
+    networks:
+      - miniflipkart-network
+    environment:
+      - PORT=50051
+      - DISABLE_PROFILER=1
+
+  # Load Generator (Optional - for testing)
+  loadgenerator:
+    image: 071292885130.dkr.ecr.us-east-1.amazonaws.com/loadgenerator:latest
+    container_name: loadgenerator
+    networks:
+      - miniflipkart-network
+    environment:
+      - FRONTEND_ADDR=frontend:8080
+      - USERS=10
+    depends_on:
+      - frontend
+    profiles:
+      - loadtest
+
+networks:
+  miniflipkart-network:
+    driver: bridge
