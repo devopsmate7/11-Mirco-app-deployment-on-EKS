@@ -12,8 +12,8 @@
     <path d="M28.65,5.77A22.07,22.07,0,1,1,6.58,27.84,22.09,22.09,0,0,1,28.65,5.77m0-5.77A27.84,27.84,0,1,0,56.48,27.84,27.83,27.83,0,0,0,28.65,0Z"/>
     <path d="M47.3,16.15,28.65,48.46,10,16.15H47.3m10-5.77H0L28.65,60,57.29,10.38Z"/>
   </g>
-  <!-- Text: MINI -->
-  <text class="brand-text-mini" x="70" y="42">MINI</text>
-  <!-- Text: FLIPKART -->
-  <text class="brand-text-flipkart" x="150" y="42">FLIPKART</text>
+  <!-- Text: Mini -->
+  <text class="brand-text-mini" x="70" y="42">Mini</text>
+  <!-- Text: Flipkart -->
+  <text class="brand-text-flipkart" x="140" y="42">Flipkart</text>
 </svg>
