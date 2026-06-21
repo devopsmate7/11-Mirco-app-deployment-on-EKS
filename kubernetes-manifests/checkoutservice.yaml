@@ -15,6 +15,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: mini-flipkart
   name: checkoutservice
 spec:
   selector:
@@ -75,6 +76,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: mini-flipkart
   name: checkoutservice
 spec:
   type: ClusterIP
